@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["ES2020", "dom"],
+    "module": "ESNext",
+    "declaration": true,
+    "outDir": "lib",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true, // 跳过库检查以避免类型错误
+    "strict": true
+  },
+  "include": ["src", "env.d.ts"],
+  "exclude": ["node_modules"]
+}

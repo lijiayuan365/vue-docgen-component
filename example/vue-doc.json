@@ -1,0 +1,13 @@
+{
+  "include": [
+    "components/**/*.vue"
+  ],
+  "exclude": [
+    "components/chld", "**/node_modules/"
+  ],
+  "inputDir": "components",
+  "outputDir": "docs",
+  "options":{
+    "flat": false
+  }
+}

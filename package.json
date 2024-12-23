@@ -1,0 +1,48 @@
+{
+  "name": "vue-docgen-component",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A CLI tool to generate documentation for Vue components using vue-docgen-api.",
+  "keywords": [
+    "vue",
+    "vue-docgen-component",
+    "vue-docgen-api",
+    "documentation-generation",
+    "vitepress",
+    "vuepress"
+  ],
+  "author": "lijiayuan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lijiayuan365/vue-docgen-component.git"
+  },
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "example": "rollup -c && cd example && npm run dev"
+  },
+  "bin": {
+    "vue-docgen-component": "lib/index.esm.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.0",
+    "@types/node": "^22.10.2",
+    "rollup": "^4.29.1",
+    "tinyglobby": "^0.2.10"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "vue-docgen-api": "^4.79.2",
+    "tslib": "^2.8.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
