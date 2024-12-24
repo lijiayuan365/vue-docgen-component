@@ -36,7 +36,8 @@ Create a configuration file `vue-doc.json` in the project root directory (option
   "inputDir": "components", // Component source directory
   "outputDir": "docs",      // Documentation output directory
   "options": {
-    "flat": false          // Whether to use flat output structure
+    "flat": false,          // Whether to use flat output structure
+    "indexUseDirName": false  // Whether to use directory name as index file name
   }
 }
 ```
@@ -56,6 +57,7 @@ vue-docgen-component
 | inputDir | string | "components" | Input directory path |
 | outputDir | string | "docs" | Output directory path |
 | options.flat | boolean | false | Whether to use flat output structure. When true, all docs will output to outputDir root, when false, maintains original directory structure |
+| options.indexUseDirName | boolean | false | Whether to use the directory name as the index file name. When a component file is named index.vue, if this option is true, the directory name will be used as the component name |
 
 ## Documentation Comment Standards
 

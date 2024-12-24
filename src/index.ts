@@ -8,6 +8,7 @@ import { awaitTo, isGlobMatch, readConfig } from './utils';
 
 interface BuildOptions {
   flat?: boolean; // 是否使用扁平化输出结构
+  indexUseDirName?: boolean; // 是否使用目录名称作为index索引文件名称
 }
 
 interface Config {
@@ -64,7 +65,11 @@ async function getAllVueFiles(
       if (!await isGlobMatch(fullPath, include, exclude)) {
         continue;
       }
-      const componentName = path.basename(fullPath, '.vue');
+      const { indexUseDirName = false } = buildOptions;
+      let componentName = path.basename(fullPath, '.vue');
+      if (indexUseDirName && componentName === 'index') {
+        componentName = path.basename(path.dirname(fullPath));
+      }
       const parentPath = path.dirname(fullPath);
       vueFiles.push({
         fullPath,

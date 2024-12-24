@@ -34,7 +34,8 @@ npm install vue-docgen-component
   "inputDir": "components", // 组件源码目录
   "outputDir": "docs",      // 文档输出目录
   "options": {
-    "flat": false          // 是否使用扁平化输出结构
+    "flat": false,          // 是否使用扁平化输出结构
+    "indexUseDirName": false // 是否使用目录名称作为index索引文件名称
   }
 }
 ```
@@ -54,6 +55,8 @@ vue-docgen-component
 | inputDir | string | "components" | 输入目录路径 |
 | outputDir | string | "docs" | 输出目录路径 |
 | options.flat | boolean | false | 是否使用扁平化输出结构。为 true 时所有文档都会输出到 outputDir 根目录，为 false 时会保持原有的目录结构 |
+| options.indexUseDirName | boolean | false | 是否使用目录名称作为index索引文件名称。当组件文件名为index.vue时，如果此配置为true，则使用所在目录名作为组件名称 |
+
 
 ## 文档注释规范
 

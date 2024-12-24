@@ -8,6 +8,7 @@
   "inputDir": "components",
   "outputDir": "docs",
   "options":{
-    "flat": false
+    "flat": true,
+    "indexUseDirName": true
   }
 }
