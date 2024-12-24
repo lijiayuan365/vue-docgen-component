@@ -26,9 +26,11 @@ export function awaitTo<T, U = Error>(
     });
 }
 export function readConfig(): Record<string, any> {
-  const configPath = path.resolve(__dirname, './vue-doc.json');
-  if (existsSync(configPath)) {
-    const configContent = readFileSync(configPath, 'utf-8');
+  // 获取当前项目根目录
+  const currentDir = process.cwd();
+  const rootConfigPath = path.join(currentDir, 'vue-doc.json');
+  if (existsSync(rootConfigPath)) {
+    const configContent = readFileSync(rootConfigPath, 'utf-8');
     return JSON.parse(configContent);
   }
   return {};
@@ -49,7 +51,6 @@ function getCachedGlobResult(pattern: string): string[] {
   if (!globCache.has(pattern)) {
     const matches = globSync(pattern);
     globCache.set(pattern, matches);
-    console.log('globCache', globCache);
   }
   return globCache.get(pattern) || [];
 }
